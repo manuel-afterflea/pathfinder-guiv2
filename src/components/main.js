@@ -44,6 +44,9 @@ const Main = () => {
                 </Button>
             </Box>
             {loading ? <RingLoader color="#00008B" loading={loading}/> : null}
+            <br></br>
+            <br></br>
+            {loading? <p>Query might take a couple minutes...</p> : null}
         </div>
     </div>
   )
