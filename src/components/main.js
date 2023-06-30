@@ -20,12 +20,14 @@ const Main = () => {
     <div className='main'>
         <video src={cheetah} autoPlay loop/>
         <div className='content'>
-            <h1>Path Finder</h1>
+            <h1>aiOS Job Search Path Finder</h1>
             <Box component="form" onSubmit={handleSubmit}>
                 <TextField 
-                onChange={e => setTextInput(e.target.value)}
-                id="outlined-basic" label="Job Title" variant="outlined" 
-                size="small"></TextField>
+                    required
+                    onChange={e => setTextInput(e.target.value)}
+                    id="outlined-basic" label="Job Title" variant="outlined" 
+                    size="small">
+                </TextField>
                 <br></br>
                 <Button variant="contained" 
                 type="submit"

@@ -26,6 +26,14 @@ video {
   align-items: center;
 }
 
+.MuiInputBase-input  {
+  background: white;
+}
+
+.MuiTextField-root {
+  background: white;
+}
+
 .MuiOutlinedInput-notchedOutline{
   border-color: #a9a9a9 !important;
 }
