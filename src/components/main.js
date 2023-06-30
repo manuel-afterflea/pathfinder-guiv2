@@ -9,12 +9,13 @@ import { RingLoader } from 'react-spinners'
 const Main = () => {
     const [textInput, setTextInput] = useState("")
     const [loading, setLoading] = useState(false)
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(textInput)
         setLoading(loading => !loading)
         console.log(loading)
-      };
+      }
 
   return (
     <div className='main'>
@@ -26,7 +27,8 @@ const Main = () => {
                     required
                     onChange={e => setTextInput(e.target.value)}
                     id="outlined-basic" label="Job Title" variant="outlined" 
-                    size="small">
+                    size="small"
+                    >
                 </TextField>
                 <br></br>
                 <Button variant="contained" 
