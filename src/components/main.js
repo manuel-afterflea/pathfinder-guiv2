@@ -9,19 +9,28 @@ import { RingLoader } from 'react-spinners'
 const Main = () => {
     const [textInput, setTextInput] = useState("")
     const [loading, setLoading] = useState(false)
+    const [excelURL, setExcelURL] = useState({})
 
-    const handleSubmit = (e) => {
+    console.log(excelURL)
+
+    const handleSubmit = (e, textInput) => {
         e.preventDefault()
+        fetch(`https://job-finder-lvija5gn3q-uc.a.run.app/api/search/?=keyword${textInput}`)
+        .then(r => r.json())
+        .then(data => setExcelURL(data))
         console.log(textInput)
         setLoading(loading => !loading)
         console.log(loading)
+        console.log(excelURL)
       }
 
   return (
     <div className='main'>
-        <video src={cheetah} autoPlay loop/>
+        {/* <video src={cheetah} autoPlay loop/> */}
         <div className='content'>
             <h1>aiOS Job Search Path Finder</h1>
+            <br></br>
+            <br></br>
             <Box component="form" onSubmit={handleSubmit}>
                 <TextField 
                     required
@@ -49,6 +58,8 @@ const Main = () => {
             <br></br>
             <br></br>
             {loading? <p>Query might take a couple minutes...</p> : null}
+            <br></br>
+            {excelURL.download_url ? <a href={excelURL.download_url}>download here</a> : null}
         </div>
     </div>
   )
