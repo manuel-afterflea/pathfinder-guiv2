@@ -51,13 +51,13 @@ const Main = () => {
                     backgroundColor: "#5A5A5A",
                     mt: 2, mb: 2
                 }}>
-               {loading ? "Downloading..." : "Download"}
+               Download
                 </Button>
             </Box>
-            {loading ? <RingLoader color="#00008B" loading={loading}/> : null}
+            {!excelURL.download_url ? <RingLoader color="#00008B" loading={loading}/> : null}
             <br></br>
             <br></br>
-            {loading? <p>Query might take a couple minutes...</p> : null}
+            {/* {loading? <p>Query might take a couple minutes...</p> : null} */}
             <br></br>
             {excelURL.download_url ? <a href={excelURL.download_url}>download here</a> : null}
         </div>
