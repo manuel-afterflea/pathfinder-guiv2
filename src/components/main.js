@@ -11,8 +11,6 @@ const Main = () => {
     const [loading, setLoading] = useState(false)
     const [excelURL, setExcelURL] = useState({})
 
-    console.log(excelURL)
-
     const handleSubmit = (e, textInput) => {
         e.preventDefault()
         fetch(`https://job-finder-lvija5gn3q-uc.a.run.app/api/search/?=keyword${textInput}`)
@@ -24,9 +22,17 @@ const Main = () => {
         console.log(excelURL)
       }
 
+      let interval = setInterval(function(){
+        let countForVideo = document.getElementById('vid').readyState;
+        if(countForVideo === 4){
+          document.getElementById('vid').play();
+          clearInterval(interval);
+        }
+      },2000);
+
   return (
     <div className='main'>
-        <video src={cheetah} autoPlay loop/>
+        <video id="vid" src={cheetah} autoPlay loop controls muted/>
         <div className='content'>
             <h1>aiOS Job Search Path Finder</h1>
             <br></br>
