@@ -32,7 +32,7 @@ const Main = () => {
 
   return (
     <div className='main'>
-        <video id="vid" src={cheetah} autoPlay loop controls muted/>
+        <video id="vid" src={cheetah} autoPlay loop controls muted playsInline/>
         <div className='content'>
             <h1>aiOS Job Search Path Finder</h1>
             <br></br>
@@ -62,7 +62,7 @@ const Main = () => {
             </Box>
             {!excelURL.download_url ? <RingLoader color="#00008B" loading={loading}/> : null}
             <br></br>
-            {/* {loading? <p>Query might take a couple minutes...</p> : null} */}
+            {/* {!excelURL.download_url ? <p>Query might take a couple minutes...</p> : null} */}
             {excelURL.download_url ? <a href={excelURL.download_url}>download here</a> : null}
         </div>
     </div>
